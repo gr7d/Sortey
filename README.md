@@ -2,7 +2,13 @@
 Sort your elements now!
 
 ## How to use
+
+### Initialize
 ```javascript
-enableDragging(PARENT_ELEMENT)
+const sorter = new Sortey(PARENT);
 ```
-Yes, it's that simple.
+
+### Make other elements sortable
+```javascript
+sorter.changeParent(PARENT)
+```
