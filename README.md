@@ -1,5 +1,5 @@
 # Sortey
-Sort your elements now!
+Make your elements sortable within seconds.
 
 ## How to use
 
