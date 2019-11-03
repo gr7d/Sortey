@@ -10,5 +10,5 @@ const sorter = new Sortey(PARENT);
 
 ### Make other elements sortable
 ```javascript
-sorter.changeParent(PARENT)
+sorter.changeParent(PARENT);
 ```
