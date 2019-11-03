@@ -10,7 +10,6 @@ function findSiblingsUnderElement(element, event) {
 
 function listenOnElement(sortableElement) {
 	sortableElement.draggable = "true";
-
 	sortableElement.addEventListener("dragstart", () => {
 		setTimeout(() => {
 			sortableElement.style.visibility = "hidden";
@@ -39,6 +38,18 @@ function listenOnElement(sortableElement) {
 	});
 }
 
-function enableDragging(parent) {
-	Array.from(parent.children).map(sortableElement => listenOnElement(sortableElement));
+function Sortey(parent) {
+	this._parent = parent;
+	this._children = parent.children;
+    
+	this.changeParent = parent => {
+		this._parent.innerHTML = this._parent.innerHTML;
+        	Array.from(this._children).map(sortableElement => sortableElement.removeAttribute("draggable"));
+
+        	this._parent = parent;
+        	this._children = parent.children;
+        	Array.from(this._children).map(sortableElement => listenOnElement(sortableElement));
+    	}
+    
+	Array.from(this._children).map(sortableElement => listenOnElement(sortableElement));
 }
